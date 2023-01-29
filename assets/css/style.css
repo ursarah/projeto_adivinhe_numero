@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #5B5B5B;
+    position: relative;
+}
+body div#container{
+    background-color: #ffffff;
+    position: absolute;
+    left: 30%;
+    transform: translate(10%, 20%);
+    padding: 8px;
+    width: 500px;
+}
+#container span{
+    color: #ffb431;
+}
+#bia-pensa{
+    display: flex;
+    align-items: center;
+    margin-bottom: 34px;
+}
+#bia-pensa h1{    
+    font-size: 48px;
+}
+#resultado{
+    text-align: center;
+}
+#resultado input{
+    margin-bottom: 26px;
+    width: 55px;
+    text-align: center;
+    padding: 10px;
+    font-size: 26px;
+    border-color: #DE5540;
+}
+#resultado input:focus{
+    border-color: #DE5540;
+    outline: none;
+}
+#resultado p{
+    font-size: 18px;
+}
+#resultado p:nth-child(3){
+    color: #ffb431;
+}
