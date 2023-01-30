@@ -14,15 +14,12 @@ body{
     justify-content: center;
     align-items: center;
 }
-body div#container{
+body .container{
     background-color: #ffffff;
     padding: 16px;
     width: 516px;
     border-radius: 5px;
     box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
-}
-#container span{
-    color: #ffb431;
 }
 #bia-pensa{
     display: flex;
@@ -33,14 +30,10 @@ body div#container{
 #bia-pensa h1{    
     font-size: 48px;
 }
-#resultado{
+.input-palp{
     text-align: center;
 }
-#resultado button{
-    background-color: #ffffff;
-    border: none;
-}
-#resultado input{
+.input-palp input{
     margin-bottom: 26px;
     width: 55px;
     text-align: center;
@@ -48,13 +41,30 @@ body div#container{
     font-size: 26px;
     border-color: #DE5540;
 }
-#resultado input:focus{
+.input-palp input:focus{
     border-color: #DE5540;
     outline: none;
 }
-#resultado p{
+.palpites{
+    text-align: center;
+}
+.palpites h3{
+    margin-top: 20px;
+    
+}
+#lista-palp, span{
+    color: #f1a115;
+}
+.palpites p{
     font-size: 18px;
 }
-#resultado p:nth-child(3){
-    color: #ffb431;
+button{
+    background-color: #DE5540;
+    border: none;
+    margin: 8px;
+    padding: 8px 16px;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
