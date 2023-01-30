@@ -5,6 +5,7 @@ let input = document.getElementById('input')
 let imgBia = document.getElementById('bia')
 let butn = document.createElement('BUTTON')
 let listPalp = []
+alert(nRandom)
 
 //Adiciona uma function ao botão criado no JS
 butn.addEventListener('click', function(){document.location.reload()})
@@ -28,42 +29,49 @@ function inList(n,l){
     }
 }
 
+function ganhar(){
+    if(Number(palp.value)==nRandom){ 
+        butn.innerHTML = 'Jogar novamente'
+        imgBia.src = 'assets/image/bia_ganha.png'
+        input.innerHTML = `<h3>Parabéns! Você acertou, o número é: <span>${nRandom}</span></h3>`               
+        input.appendChild(butn)
+    }
+    else{
+        return false
+    }
+}
+function perder(){
+    if(ganhar()==false && listPalp.length == 10){    
+        butn.innerHTML = 'Tente novamente'
+        imgBia.src = 'assets/image/bia_perde.png'
+        input.innerHTML = `<h3>Você não acertou, o número era: <span>${nRandom}</span></h3>`
+        input.appendChild(butn)      
+    }else{        
+        res.innerHTML += ' - '
+        return false
+    }
+}
+
 //Onde o jogo acontece
 function jogo(){
-    if(inList(palp.value, listPalp) && palpites(palp.value)){      
-        res.innerHTML += `${palp.value}`
+    if(inList(palp.value, listPalp) && palpites(palp.value)){ 
+        ganhar()           
+        res.innerHTML += `${palp.value}` 
         listPalp.push(Number(palp.value))
-        if(listPalp.length == 10){      
-            butn.innerHTML = 'Tente novamente'
-            imgBia.src = 'assets/image/bia_perde.png'
-            input.innerHTML = `<h3>Você não acertou, o número era: <span>${nRandom}</span></h3>`
-            input.appendChild(butn)      
-            
+        if(Number(palp.value) > nRandom){
+            alert('Maior do que pensei')
         }
-        else{
-            if(Number(palp.value) > nRandom){
-                alert('Maior do que pensei')
-                res.innerHTML += ' - '
-            }
-            else if(Number(palp.value) < nRandom){
-                alert('Menor do que pensei')
-                res.innerHTML += ' - '
-            }
-            else{
-                butn.innerHTML = 'Jogar novamente'
-                imgBia.src = 'assets/image/bia_ganha.png'
-                input.innerHTML = `<h3>Parabéns! Você acertou, o número é: <span>${nRandom}</span></h3>`               
-                input.appendChild(butn)
-            }
-        }
-    
+        else if(Number(palp.value) < nRandom){
+            alert('Menor do que pensei')
+        }         
+        perder()  
     }
 }
 
 //Apertar Enter e apagar o input
 function enviar(){
     if(event.keyCode == 13){
-        jogo()        
+        jogo()   
     }else{
         return false
     }      
