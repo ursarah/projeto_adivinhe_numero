@@ -52,6 +52,7 @@ function perder(){
 
 //Onde o jogo acontece
 function jogo(){
+    document.getElementById('enter').innerHTML = ''
     if(inList(palp.value, listPalp) && palpites(palp.value)){ 
         ganhar()           
         res.innerHTML += `${palp.value}` 
