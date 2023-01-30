@@ -33,6 +33,10 @@ body div#container{
 #resultado{
     text-align: center;
 }
+#resultado button{
+    background-color: #ffffff;
+    border: none;
+}
 #resultado input{
     margin-bottom: 26px;
     width: 55px;
