@@ -1,6 +1,7 @@
 let nRandom = Math.floor(Math.random() * 100) + 1
 let palp = document.getElementById('txtpalp')
 let res = document.getElementById('lista-palp')
+let imgBia = document.getElementById('bia')
 let listPalp = []
 
 function palpites(n){
@@ -17,9 +18,11 @@ function inList(n,l){
         return false
     }
 }
-function enviar(){
-    if(event.keyCode == 13){
-        if(!inList(palp.value, listPalp) && palpites(palp.value)){
+function jogo(){
+    if(!inList(palp.value, listPalp) && palpites(palp.value)){      
+        res.innerHTML += `${palp.value}-`
+        listPalp.push(Number(palp.value))
+        if(listPalp.length<=10){
             if(Number(palp.value)>nRandom){
                 alert('Maior do que pensei')
             }
@@ -27,15 +30,25 @@ function enviar(){
                 alert('Menor do que pensei')
             }
             else{
-                alert('Voce ganhou')
+                alert('Ganhou')
+                return false
             }
-            res.innerHTML += `${palp.value}-`
-            listPalp.push(Number(palp.value))
-        }else{
-            alert('Valor errado')
         }
+        else{
+            alert('voce perdeu') 
+            listPalp = []
+            res.innerHTML = ''
+            imgBia.src = 'assets/image/bia_perde.png'
+            let nRandom = Math.floor(Math.random() * 100) + 1       
+            return false
+        }
+        palp.value = ""
+    }
+}
+function enviar(){
+    if(event.keyCode == 13){
+        jogo()        
     }else{
         return false
-    }
-    
+    }   
 }

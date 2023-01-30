@@ -8,22 +8,25 @@
     font-family: 'Roboto', sans-serif;
 }
 body{
-    background-color: #5B5B5B;
-    position: relative;
+    height: 100vh;
+    background-color: #dedede;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 body div#container{
     background-color: #ffffff;
-    position: absolute;
-    left: 30%;
-    transform: translate(10%, 20%);
-    padding: 8px;
-    width: 500px;
+    padding: 16px;
+    width: 516px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
 }
 #container span{
     color: #ffb431;
 }
 #bia-pensa{
     display: flex;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 34px;
 }
