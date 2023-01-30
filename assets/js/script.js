@@ -46,8 +46,7 @@ function perder(){
         imgBia.src = 'assets/image/bia_perde.png'
         input.innerHTML = `<h3>Você não acertou, o número era: <span>${nRandom}</span></h3>`
         input.appendChild(butn)      
-    }else{        
-        res.innerHTML += ' - '
+    }else{                
         return false
     }
 }
@@ -65,6 +64,9 @@ function jogo(){
             alert('Menor do que pensei')
         }         
         perder()  
+        if(perder() == false && ganhar() == false){
+            res.innerHTML += ' - '
+        }
     }
 }
 
