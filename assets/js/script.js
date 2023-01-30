@@ -5,7 +5,6 @@ let input = document.getElementById('input')
 let imgBia = document.getElementById('bia')
 let butn = document.createElement('BUTTON')
 let listPalp = []
-alert(nRandom)
 
 //Adiciona uma function ao botão criado no JS
 butn.addEventListener('click', function(){document.location.reload()})
